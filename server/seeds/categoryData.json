@@ -1,11 +1,11 @@
 [
   {
     "name": "tires",    
-    "image" : "tire_stock.png"
+    "image" : "tires_stock.png"
   },
   {
     "name": "seats",    
-    "image" : "seat_stock.png"
+    "image" : "seats_stock.png"
   },
   {
     "name": "brakes",    
