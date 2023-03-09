@@ -1,62 +1,51 @@
 [
   {
-    "name": "clothing",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "tires",    
+    "image" : "tire_stock.jpg"
   },
   {
-    "name": "shoes",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "seats",    
+    "image" : "seat_stock.jpg"
   },
   {
-    "name": "outerwear",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "brakes",    
+    "image" : "brakes_stock.jpg"
   },
   {
-    "name": "toys",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "shifters",    
+    "image" : "shifters_stock.jpg"
   },
   {
-    "name": "art",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "hubs",    
+    "image" : "hubs_stock.jpg"
   },
   {
-    "name": "home decor",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "frames",    
+    "image" : "frames_stock.jpg"
   },
   {
-    "name": "garden",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "pedals",    
+    "image" : "pedals_stock.jpg"
   },
   {
-    "name": "jewelry",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "bearings",    
+    "image" : "bearings_stock.jpg"
   },
   {
-    "name": "party",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "drivetrain",    
+    "image" : "drivetrain_stock.jpg"
   },
   {
-    "name": "puzzles",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "handlebars",    
+    "image" : "handlebars_stock.jpg"
   },
   {
-    "name": "bath",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "spokes",    
+    "image" : "spokes_stock.jpg"
   },
   {
-    "name": "kitchen",
-    "products": "Also Something",
-    "image" : "also something"
+    "name": "forks",    
+    "image" : "forks_stock.jpg"
   }
+  
 ]
