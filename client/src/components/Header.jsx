@@ -1,46 +1,93 @@
+import { AiOutlineShoppingCart } from 'react-icons/ai'; 
 
-const Header = ({user}) => {
-  return (
-    <header className="px-2 pb-0 mb-0" style={{ borderBottom: "1px solid #333" }}>
-      <nav className="navbar navbar-dark navbar-expand-md bg-body-secondary" data-bs-theme="dark">
-        <div className="container-fluid">
-          {/* <a className="navbar-brand" href="##">Navbar</a> */}
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              
-              { !user ? (
-                <>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/signup">Signup</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/login">Login</a>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/profile">Profile</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/logout">Logout</a>
-                  </li>
-                </>
-              )}
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  )
-}
+import 'bootstrap/dist/css/bootstrap.min.css'
 
+const Header = ({ user, cartItems }) => {
+    return (
+        <header>
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid px-4">
+                    <a className="navbar-brand" href="#">
+                        Bobby's Bike Shop
+                    </a>
+                    <div>
+                    <form className="d-flex" role="search">
+                      <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                      <button className="btn btn-outline-secondary" type="submit">Search</button>
+                    </form>
+                    </div>
+                    <div>
+                        <ul className="navbar-nav">
+                            <li className="nav-item dropdown">
+                                <a
+                                    className="nav-link dropdown-toggle"
+                                    href='#'
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <AiOutlineShoppingCart size={24} />
+                                </a>
+                                <ul className="dropdown-menu">
+                                    { cartItems.map((item) => {
+                                      return (
+                                        <li>
+                                          <p>{item.title}</p>
+                                          <p>${item.price}</p>
+                                        </li>
+                                      )
+                                    })}
+                                </ul>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a
+                                    className="nav-link dropdown-toggle"
+                                    href='#'
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Dropdown link
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        <a className="dropdown-item" href="#">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a className="dropdown-item" href="#">
+                                            Sign Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    );
+};
 
-export default Header
+export default Header;
+
+// { !user ? (
+//   <>
+//     <li className="nav-item">
+//       <a className="nav-link" href="/signup">Signup</a>
+//     </li>
+//     <li className="nav-item">
+//       <a className="nav-link" href="/login">Login</a>
+//     </li>
+//   </>
+// ) : (
+//   <>
+//     <li className="nav-item">
+//       <a className="nav-link" href="/profile">Profile</a>
+//     </li>
+//     <li className="nav-item">
+//       <a className="nav-link" href="/logout">Logout</a>
+//     </li>
+//   </>
+// )}
