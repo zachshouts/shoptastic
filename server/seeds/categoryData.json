@@ -1,50 +1,38 @@
 [
   {
-    "name": "tires",    
-    "image" : "tires_stock.png"
+    "name": "tires"    
   },
   {
-    "name": "seats",    
-    "image" : "seats_stock.png"
+    "name": "seats"    
   },
   {
-    "name": "brakes",    
-    "image" : "brakes_stock.png"
+    "name": "brakes"    
   },
   {
-    "name": "shifters",    
-    "image" : "shifters_stock.png"
+    "name": "shifters"    
   },
   {
-    "name": "hubs",    
-    "image" : "hubs_stock.png"
+    "name": "hubs"    
   },
   {
-    "name": "frames",    
-    "image" : "frames_stock.png"
+    "name": "frames"    
   },
   {
-    "name": "pedals",    
-    "image" : "pedals_stock.png"
+    "name": "pedals"    
   },
   {
-    "name": "bearings",    
-    "image" : "bearings_stock.png"
+    "name": "bearings"    
   },
   {
-    "name": "drivetrain",    
-    "image" : "drivetrain_stock.png"
+    "name": "drivetrain"    
   },
   {
-    "name": "handlebars",    
-    "image" : "handlebars_stock.png"
+    "name": "handlebars"    
   },
   {
-    "name": "spokes",    
-    "image" : "spokes_stock.png"
+    "name": "spokes"    
   },
   {
-    "name": "forks",    
-    "image" : "forks_stock.png"
+    "name": "forks"    
   }  
 ]
