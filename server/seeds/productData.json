@@ -1,5 +1,6 @@
 [
-  {
+  { 
+    "_id": 1,   
     "title": "Pedals - Platform Aluminum",
     "description": "Aluminum pedals, flat and wide with excellent grip",
     "price": "100.00",
@@ -7,6 +8,7 @@
     "stock": 5
   },
   {
+    "_id": 2,
     "title": "Frame - Carbon",
     "description": "Carbon 11m frame for downhill",
     "price": "2399.99",
@@ -14,6 +16,7 @@
     "stock": 2
   },
   {
+    "_id": 3,
     "title": "Tires - Awesome Brand",
     "description": "Special Awesome Brand tires - tubeless",
     "price": "499.95",
@@ -21,6 +24,7 @@
     "stock": 12
   },
   {
+    "_id": 4,
     "title": "Disc brake - Titanium Calipers",
     "description": "Mechanical disc brakes - Titanium (Front and Rear)",
     "price": "475.95",
@@ -28,6 +32,7 @@
     "stock": 1
   },
   {
+    "_id": 5,
     "title": "Suspension Forks, red",
     "description": "36mm steel and titanium forks in red (and other colors)",
     "price": "850.00",
@@ -35,6 +40,7 @@
     "stock": 7  
   },
   {
+    "_id": 6,
     "title": "All City Bike Saddle, white",
     "description": "A bike saddle made for comfort and long trips in the big city. Leather. Also comes in brown.",
     "price": "45.99",
@@ -42,6 +48,7 @@
     "stock": 7
   },
   {
+    "_id": 7,
     "title": "Standard Leather Saddle in red",
     "description": "A leather bike saddle in a fetching shade of red made from treated leather.",
     "price": "150.99",
@@ -49,6 +56,7 @@
     "stock": 7
   },
   {
+    "_id": 8,
     "title": "Racing mountain bike aluminum handlebars - new",
     "description": "Light aluminum handlebars perfect for mmountain bike racing when you need that lighter weight",
     "price": "120.00",
