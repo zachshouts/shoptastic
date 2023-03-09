@@ -9,16 +9,29 @@ module.exports = {
     const salt = await bcrypt.genSalt(10)
     const password = await bcrypt.hash(body.password, salt)
 
-    const userToInsert = {email: body.email, password: password }
+    const userToInsert = {
+      first_name: body.first_name,
+      last_name: body.last_name,
+      city: body.city,
+      state: body.state,
+      email: body.email,
+      password: password,
+    }
     const user = await User.create(userToInsert);
 
     if (!user) return res.status(400).json({ message: 'Unable to create user' });
-    res.status(200).json({ _id: user._id, email: user.email });
+    res.status(200).json(user);
   },
 
 
   async updateUser({ body, params }, res) {
-    let userToUpdate = { email: body.email }
+    let userToUpdate = {
+      first_name: body.first_name,
+      last_name: body.last_name,
+      city: body.city,
+      state: body.state,
+      email: body.email
+    }
 
     if( body.password?.length ){
       const salt = await bcrypt.genSalt(10)
@@ -33,7 +46,32 @@ module.exports = {
     );
 
     if (!user) return res.status(400).json({ message: 'Unable to update user' });
-    res.status(200).json({ _id: user._id, email: user.email });
+    res.status(200).json(user);
+  },
+
+
+  async getAllUsers(req, res) {
+    try {
+      const users = await User.find().populate({ path: 'purchases'});
+      res.status(200).json(users);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },
+
+
+  async getOneUser(req, res) {
+    try {
+      const user = await User.findOne({ _id: req.params.id }).populate({ path: 'purchases' });
+
+      if (!user) {
+        res.status(404).json({ message: 'User not found' });
+      } else {
+        res.status(200).json(user);
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
   },
 
 
@@ -71,6 +109,21 @@ module.exports = {
     if( !user ) return res.status(401).json({msg: "authorized"})
     
     return res.status(200).json({ _id: user._id, email: user.email})
+  },
+
+
+  async removeUser(req, res) {
+    try {
+      const deletedUser = await User.findOneAndDelete({ _id: req.params.id });
+
+      if (!deletedUser) {
+        res.status(404).json({ message: 'User not found' });
+      } else {
+        res.status(200).json(deletedUser);
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
 
 };
