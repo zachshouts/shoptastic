@@ -1,6 +1,5 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'; 
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Header = ({ user, cartItems }) => {
     return (
