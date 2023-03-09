@@ -30,6 +30,7 @@ const fetchProduct = async (e) => {
           <h4 className="py-3">{product.title}</h4>
           <p>{product.description}</p>
           <p>Number in stock: {product.stock}</p>
+          <Button className="btn btn-outline-success">Purchase</Button>
         </Col>
       </Row>
     </Container>
