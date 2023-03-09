@@ -1,0 +1,62 @@
+[
+  {
+    "name": "clothing",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "shoes",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "outerwear",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "toys",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "art",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "home decor",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "garden",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "jewelry",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "party",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "puzzles",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "bath",
+    "products": "Also Something",
+    "image" : "also something"
+  },
+  {
+    "name": "kitchen",
+    "products": "Also Something",
+    "image" : "also something"
+  }
+]
