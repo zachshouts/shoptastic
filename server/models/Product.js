@@ -1,6 +1,11 @@
 const { Schema, model } = require("mongoose");
 
 const productSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    uniquie: true
+  },
 	title: {
 		type: String,
     required: true

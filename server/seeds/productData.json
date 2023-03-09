@@ -1,10 +1,66 @@
 [
-  {
-    "title": "something",
-    "description": "something",
-    "price": "99.99",
-    "images": "something",
+  { 
+    "_id": 1,   
+    "title": "Pedals - Platform Aluminum",
+    "description": "Aluminum pedals, flat and wide with excellent grip",
+    "price": "100.00",
+    "images": "products/pedal_product_aluminum.png",
     "stock": 5
-
+  },
+  {
+    "_id": 2,
+    "title": "Frame - Carbon",
+    "description": "Carbon 11m frame for downhill",
+    "price": "2399.99",
+    "images": "products/frame_product_carbon.png",
+    "stock": 2
+  },
+  {
+    "_id": 3,
+    "title": "Tires - Awesome Brand",
+    "description": "Special Awesome Brand tires - tubeless",
+    "price": "499.95",
+    "images": "products/tires_product_awesome.png",
+    "stock": 12
+  },
+  {
+    "_id": 4,
+    "title": "Disc brake - Titanium Calipers",
+    "description": "Mechanical disc brakes - Titanium (Front and Rear)",
+    "price": "475.95",
+    "images": "products/brake_product_titanium.png",
+    "stock": 1
+  },
+  {
+    "_id": 5,
+    "title": "Suspension Forks, red",
+    "description": "36mm steel and titanium forks in red (and other colors)",
+    "price": "850.00",
+    "images": "products/fork_suspension.png",
+    "stock": 7  
+  },
+  {
+    "_id": 6,
+    "title": "All City Bike Saddle, white",
+    "description": "A bike saddle made for comfort and long trips in the big city. Leather. Also comes in brown.",
+    "price": "45.99",
+    "images": "products/bike_saddle.png",
+    "stock": 7
+  },
+  {
+    "_id": 7,
+    "title": "Standard Leather Saddle in red",
+    "description": "A leather bike saddle in a fetching shade of red made from treated leather.",
+    "price": "150.99",
+    "images": "products/leatherred_bike_saddle.png",
+    "stock": 7
+  },
+  {
+    "_id": 8,
+    "title": "Racing mountain bike aluminum handlebars - new",
+    "description": "Light aluminum handlebars perfect for mmountain bike racing when you need that lighter weight",
+    "price": "120.00",
+    "images": "products/racing_mountain_handlebars.png",
+    "stock": 7
   }
 ]
