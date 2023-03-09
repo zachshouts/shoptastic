@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import cookie from "js-cookie";
-import { Header, Wrapper } from "./components";
+import { Header, Wrapper, Footer } from "./components";
 import { HomePage, LoginPage, ProfilePage, SignupPage } from "./pages";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -44,6 +44,7 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
           </Routes>
         </div>
+        <Footer />
       </Wrapper>
     </BrowserRouter>
   );
