@@ -1,10 +1,37 @@
 [
   {
-    "title": "something",
-    "description": "something",
-    "price": "99.99",
-    "images": "something",
+    "title": "Pedals - Platform Aluminum",
+    "description": "Aluminum pedals, flat and wide with excellent grip",
+    "price": "100.00",
+    "images": "products/pedal_product_aluminum.png",
     "stock": 5
-
+  },
+  {
+    "title": "Frame - Carbon",
+    "description": "Carbon 11m frame for downhill",
+    "price": "2399.99",
+    "images": "products/frame_product_carbon.png",
+    "stock": 2
+  },
+  {
+    "title": "Tires - Awesome Brand",
+    "description": "Special Awesome Brand tires - tubeless",
+    "price": "499.95",
+    "images": "products/tires_product_awesome.png",
+    "stock": 12
+  },
+  {
+    "title": "Disc brake - Titanium Calipers",
+    "description": "Mechanical disc brakes - Titanium (Front and Rear)",
+    "price": "475.95",
+    "images": "products/brake_product_titanium.png",
+    "stock": 1
+  },
+  {
+    "title": "Suspension Forks, red",
+    "description": "36mm steel and titanium forks in red (and other colors)",
+    "price": "850.00",
+    "images": "products/fork_suspension.png",
+    "stock": 7
   }
 ]
