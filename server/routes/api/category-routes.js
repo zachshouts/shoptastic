@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+
 const {
     addCategory,
     updateCategory,
@@ -14,5 +15,6 @@ router
     .get(getOneCategory)
     .put(updateCategory)
     .delete(removeCategory);
+
 
 module.exports = router;
