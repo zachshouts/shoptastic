@@ -6,81 +6,40 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-const category = [
-  {
-    name: "Footwear",
-    Products: [
-      {
-        title: "sneakers",
-        description: "Comfortable sneakers",
-        price: "55",
-        imags: "https://via.placeholder.com/640x360",
-        creator: "John Boy",
-      },
-      {
-        title: "shoes",
-        description: "Comfortable shoes",
-        price: "55",
-        images: "https://via.placeholder.com/640x360",
-        creator: "John Boy",
-      },
-    ],
-  },
-  {
-    name: "Toys",
-    Products: [
-      {
-        title: "Blocks",
-        description: "Build stuff",
-        price: "25",
-        images: "https://via.placeholder.com/640x360",
-        creator: "Jackson",
-      },
-      {
-        title: "Doll",
-        description: "Scary little doll",
-        price: "15",
-        images: "https://via.placeholder.com/640x360",
-        creator: "Mia",
-      },
-    ],
-  },
-];
-
 const HomePage = ({ user }) => {
+  const [categories, setCategories] = useState([]);
   const [data, setData] = useState([]);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
+  const [selectedProducts, setSelectedProducts] = useState([]);
+
+  const fetchProducts = async (e) => {
+    const productsResponse = await fetch(`/api/category/${e.target.key}`);
+    const products = await productsResponse.json();
+    setSelectedProducts(products);
+  };
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchCategories() {
       try {
+        let productArr = [];
         // Fetch categories
-        const categoryResponse = await fetch("/api/categories");
-        const categories = await categoryResponse.json();
+        const categoryResponse = await fetch("/api/category");
+        const category = await categoryResponse.json();
 
-        // Fetch products for each category
-        const productPromises = categories.map((category) =>
-          fetch(`/api/products/${category.name}`)
-        );
-        const productResponses = await Promise.all(productPromises);
-        const products = await Promise.all(
-          productResponses.map((response) => response.json())
-        );
+        category.map((category) => {
+          productArr = [...productArr, ...category.products];
+        });
 
-        // Combine categories and products into one array
-        const combinedData = categories.map((category, index) => ({
-          ...category,
-          products: products[index],
-        }));
+        setSelectedProducts(productArr);
 
         // Update state with fetched data
-        setData(combinedData);
+        setCategories(categories);
       } catch (error) {
         console.error(error);
       }
     }
 
-    fetchData();
+    fetchCategories();
   }, []);
 
   const handleSelect = (selectedIndex) => {
@@ -90,8 +49,8 @@ const HomePage = ({ user }) => {
   return (
     <>
       <Carousel activeIndex={selectedCategoryIndex} onSelect={handleSelect}>
-        {data.map((category) => (
-          <Carousel.Item key={category.name}>
+        {categories.map((category) => (
+          <Carousel.Item onClick={fetchProducts} key={category._id}>
             <img
               className="d-block w-100"
               src={category.image}
@@ -106,7 +65,7 @@ const HomePage = ({ user }) => {
 
       <h2>Products</h2>
       <Row>
-        {data[selectedCategoryIndex]?.products?.map((product) => (
+        {selectedProducts.map((product) => (
           <Col className="col-lg-4 col-md-5" key={product.title}>
             <Card className="product-card align-items-flex-end">
               <Card.Body>
