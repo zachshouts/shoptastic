@@ -19,9 +19,13 @@ const productSchema = new Schema({
     required: true
   },
   images: [{ type: String }],
-  creator: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+  stock: {
+    type: Number,
+  },
+  stripe_id: {
+    type: String,
+    required: true,
+    unique: true
   }
 });
 
