@@ -2,7 +2,14 @@ import { useState } from "react"
 
 const SignupPage = (props) => {
 
-  const defForm = { email: "", password: "" }
+  const defForm = {
+    first_name: '',
+    last_name: '',
+    city: '',
+    state: '',
+    email: "",
+    password: "",
+  };
   const [ formData, setFormData ] = useState(defForm)
   const [ signupResult, setSignupResult ] = useState("")
 
@@ -29,35 +36,80 @@ const SignupPage = (props) => {
   }
 
   return (
-    <>
-      <h1>Signup Page</h1>
+    <div className="container w-25 mx-auto mt-4">
+      <h1 className="text-center my-4">Signup</h1>
 
       <form className="form mb-3">
         <div className="form-group">
-          <label>Email Address</label>
+          <label className="my-2">First Name</label>
+          <input   
+            type="text"
+            name="first_name"
+            placeholder="Gary"
+            className="form-control mb-3"
+            value={formData.first_name}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label className="my-2">Last Name</label>
+          <input   
+            type="text"
+            name="last_name"
+            placeholder="Almes"
+            className="form-control mb-3"
+            value={formData.last_name}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label className="my-2">City</label>
+          <input   
+            type="text"
+            name="city"
+            placeholder="Minneapolis"
+            className="form-control mb-3"
+            value={formData.city}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label className="my-2">State</label>
+          <input   
+            type="text"
+            name="state"
+            placeholder="Minnesota"
+            className="form-control mb-3"
+            value={formData.state}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label className="my-2">Email</label>
           <input   
             type="text"
             name="email"
             placeholder="john@gmail.com"
-            className="form-control"
+            className="form-control mb-3"
             value={formData.email}
             onChange={handleInputChange}
           />
         </div>
 
         <div className="form-group">
-          <label>Password</label>
+          <label className="my-2">Password</label>
           <input   
             type="password"
             name="password"
-            className="form-control"
+            className="form-control mb-3"
             value={formData.password}
             onChange={handleInputChange}
           />
         </div>
 
-        <div className="form-group mt-2">
+        <div className="form-group mt-2 text-center">
           <button className="btn btn-primary" onClick={handleFormSubmit}>Sign Me Up!</button>
+          <p className="mt-2">Already have an account? <a href="/login" className="text-decoration-none">Login here.</a></p>
         </div>
       </form>
 
@@ -72,7 +124,7 @@ const SignupPage = (props) => {
           Signup failed!
         </div>
       )}
-    </>
+    </div>
   )
 }
 

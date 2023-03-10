@@ -32,35 +32,36 @@ const LoginPage = (props) => {
   }
 
   return (
-    <>
-      <h1>Login Page</h1>
+    <div className="container w-25 mx-auto mt-4">
+      <h1 className="text-center my-4">Login</h1>
 
       <form className="form mb-3">
         <div className="form-group">
-          <label>Email Address</label>
+          <label className="my-2">Email</label>
           <input   
             type="text"
             name="email"
-            placeholder="john@gmail.com"
-            className="form-control"
+            placeholder="gary@gmail.com"
+            className="form-control mb-3"
             value={formData.email}
             onChange={handleInputChange}
           />
         </div>
 
         <div className="form-group">
-          <label>Password</label>
+          <label className="my-2">Password</label>
           <input   
             type="password"
             name="password"
-            className="form-control"
+            className="form-control mb-3"
             value={formData.password}
             onChange={handleInputChange}
           />
         </div>
 
-        <div className="form-group mt-2">
-          <button className="btn btn-primary" onClick={handleFormSubmit}>Log Me In!</button>
+        <div className="form-group mt-2 text-center">
+          <button className="btn btn-primary" onClick={handleFormSubmit}>Login</button>
+          <p className="mt-2">Don't have an account? <a href="/signup" className="text-decoration-none">Signup here.</a></p>
         </div>
       </form>
 
@@ -75,7 +76,7 @@ const LoginPage = (props) => {
           Login failed!
         </div>
       )}
-    </>
+    </div>
   )
 
 }
