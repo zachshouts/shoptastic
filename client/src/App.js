@@ -38,14 +38,14 @@ function App() {
     <BrowserRouter>
       <Wrapper>
         <Header user={user} cartItems={cartItems} />
-        {/* <div className="pt-3 px-4">
+        <div className="pt-3 px-4">
           <Routes>
             <Route path="/" element={<HomePage user={user} />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
             <Route path="/signup" element={<SignupPage />} />
           </Routes>
-        </div> */}
+        </div>
         <Footer />
       </Wrapper>
     </BrowserRouter>
