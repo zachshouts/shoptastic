@@ -18,6 +18,11 @@ const HomePage = ({ user }) => {
     setSelectedProducts(products);
   };
 
+  const handleItemLoad = (e) => {
+    const id = e.target.key;
+    window.location.href = `/product?product_id=${id}`;
+  };
+
   useEffect(() => {
     async function fetchCategories() {
       try {
@@ -66,8 +71,11 @@ const HomePage = ({ user }) => {
       <h2>Products</h2>
       <Row>
         {selectedProducts.map((product) => (
-          <Col className="col-lg-4 col-md-5" key={product.title}>
-            <Card className="product-card align-items-flex-end">
+          <Col className="col-lg-4 col-md-5" key={product._id}>
+            <Card
+              className="product-card align-items-flex-end"
+              onClick={handleItemLoad}
+            >
               <Card.Body>
                 <Card.title className="producttitle">
                   {product.title}
