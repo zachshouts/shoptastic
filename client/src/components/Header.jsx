@@ -41,9 +41,9 @@ const Header = ({ user, setUser, cartItems }) => {
                                         <ul>
                                             { cartItems.map((item) => {
                                                 return (
-                                                    <li>
-                                                    <p>{item.title}</p>
-                                                    <p>${item.price}</p>
+                                                    <li key={item.stripe_id}>
+                                                        <p>{item.title}</p>
+                                                        <p>${item.price}</p>
                                                     </li>
                                                     )
                                                 })}
@@ -58,10 +58,6 @@ const Header = ({ user, setUser, cartItems }) => {
                                                 </>
                                             )
                                         })}
-                                        <input type={'hidden'}  name={'Price[]'} key={'price_1MjtdeGFNcYX1JBmGG0DZNYC'} value={'price_1MjtdeGFNcYX1JBmGG0DZNYC'} />
-                                        <input type={'hidden'}  name={'Quantity[]'} value={2} />
-                                        <input type={'hidden'}  name={'Price[]'} key={'price_1Mk8dbGFNcYX1JBmfVmE3etI'} value={'price_1Mk8dbGFNcYX1JBmfVmE3etI'} />
-                                        <input type={'hidden'}  name={'Quantity[]'} value={1} />
                                         <button>Checkout</button>
                                     </form>
                                 </div>
@@ -107,22 +103,3 @@ const Header = ({ user, setUser, cartItems }) => {
 
 export default Header;
 
-// { !user ? (
-//   <>
-//     <li className="nav-item">
-//       <a className="nav-link" href="/signup">Signup</a>
-//     </li>
-//     <li className="nav-item">
-//       <a className="nav-link" href="/login">Login</a>
-//     </li>
-//   </>
-// ) : (
-//   <>
-//     <li className="nav-item">
-//       <a className="nav-link" href="/profile">Profile</a>
-//     </li>
-//     <li className="nav-item">
-//       <a className="nav-link" href="/logout">Logout</a>
-//     </li>
-//   </>
-// )}
