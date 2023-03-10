@@ -27,16 +27,21 @@ const Header = ({ user, cartItems }) => {
                                 >
                                     <AiOutlineShoppingCart size={24} />
                                 </a>
-                                <ul className="dropdown-menu">
-                                    { cartItems.map((item) => {
-                                      return (
-                                        <li>
-                                          <p>{item.title}</p>
-                                          <p>${item.price}</p>
-                                        </li>
-                                      )
-                                    })}
-                                </ul>
+                                <div className='dropdown-menu'>
+                                    <ul>
+                                        { cartItems.map((item) => {
+                                        return (
+                                            <li>
+                                            <p>{item.title}</p>
+                                            <p>${item.price}</p>
+                                            </li>
+                                        )
+                                        })}
+                                    </ul>
+                                    <form action='/api/checkout' method='POST'>
+                                        <button>Checkout</button>
+                                    </form>
+                                </div>
                             </li>
                             <li className="nav-item dropdown">
                                 <a
