@@ -13,8 +13,8 @@ module.exports = {
         const session = await stripe.checkout.sessions.create({
             line_items: lineItemsArr,
             mode: 'payment',
-            success_url: `http://localhost:3000/`,
-            cancel_url: `http://localhost:3000/`
+            success_url: `http://localhost:3000?checkout=success`,
+            cancel_url: `http://localhost:3000?checkout=cancel`
         });
 
         res.redirect(303, session.url);

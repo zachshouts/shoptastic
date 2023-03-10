@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-const HomePage = ({ user }) => {
+const HomePage = ({ user, setCartItems }) => {
   const [categories, setCategories] = useState([]);
   const [data, setData] = useState([]);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
@@ -15,6 +15,7 @@ const HomePage = ({ user }) => {
   const fetchProducts = async (e) => {
     const productsResponse = await fetch(`/api/category/${e.target.key}`);
     const products = await productsResponse.json();
+    console.log(products);
     setSelectedProducts(products);
   };
 
@@ -22,6 +23,13 @@ const HomePage = ({ user }) => {
     const id = e.target.key;
     window.location.href = `/product?product_id=${id}`;
   };
+
+  const testCheckout = () => {
+    const params = new URLSearchParams(document.location.search);
+    if (params.get('checkout') !== undefined && params.get('checkout')) {
+      setCartItems([]);
+    }
+  }
 
   useEffect(() => {
     async function fetchCategories() {
@@ -34,6 +42,7 @@ const HomePage = ({ user }) => {
         category.map((category) => {
           productArr = [...productArr, ...category.products];
         });
+        console.log(productArr);
 
         setSelectedProducts(productArr);
 
@@ -45,6 +54,7 @@ const HomePage = ({ user }) => {
     }
 
     fetchCategories();
+    testCheckout();
   }, []);
 
   const handleSelect = (selectedIndex) => {
@@ -75,6 +85,7 @@ const HomePage = ({ user }) => {
             <Card
               className="product-card align-items-flex-end"
               onClick={handleItemLoad}
+              key={product._id}
             >
               <Card.Body>
                 <Card.Title className="producttitle">
@@ -82,6 +93,7 @@ const HomePage = ({ user }) => {
                 </Card.Title>
                 <img src={product.image} className="product-image" />
                 <Card.Text className="product-price">{product.price}</Card.Text>
+                <Card.Text><a href={`/product?product_id=${product._id}`}>View More</a></Card.Text>
               </Card.Body>
             </Card>
           </Col>

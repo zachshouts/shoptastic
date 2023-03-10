@@ -6,14 +6,17 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 const ProductPage = ({ user, cartItems, setCartItems }) => {
   // Set state for search result and search query
   const [product, setProduct] = useState({});
-  const [formData, setFormData] = useState("");
+  const [formData, setFormData] = useState({ quantity: 0 });
 
-  const id = URLSearchParams.get("product_id");
-
+  
   const fetchProduct = async (e) => {
+    const params = new URLSearchParams(document.location.search);
+    const id = params.get('product_id');
+    // console.log(id);
     const productResponse = await fetch(`/api/product/${id}`);
     const singleProduct = await productResponse.json();
-    setProduct(singleProduct).catch((err) => console.log(err));
+    console.log(singleProduct);
+    setProduct(singleProduct);
   };
 
   const handleInput = (e) => {
@@ -49,7 +52,7 @@ const ProductPage = ({ user, cartItems, setCartItems }) => {
           <p>Price: ${product.price}</p>
           <form className="form mb-3" onSubmit={handleFormSubmit}>
             <div className="form-group">
-              <input type="hidden" name="stripe_id" value={product.stripe_id} />
+              {/* <input type="hidden" name="stripe_id" value={product.stripe_id} /> */}
               <label>Enter Quantity</label>
               <input
                 type="text"
