@@ -28,17 +28,28 @@ const Header = ({ user, cartItems }) => {
                                     <AiOutlineShoppingCart size={24} />
                                 </a>
                                 <div className='dropdown-menu'>
-                                    <ul>
-                                        { cartItems.map((item) => {
-                                        return (
-                                            <li>
-                                            <p>{item.title}</p>
-                                            <p>${item.price}</p>
-                                            </li>
-                                        )
-                                        })}
-                                    </ul>
+                                        <ul>
+                                            {/* { cartItems.map((item) => {
+                                                return (
+                                                    <li>
+                                                    <p>{item.title}</p>
+                                                    <p>${item.price}</p>
+                                                    </li>
+                                                    )
+                                                })} */}
+                                        </ul>
+
                                     <form action='/api/checkout' method='POST'>
+                                        {/* { cartItems.map((item) => {
+                                            return (
+                                                <input type={'hidden'} name={Price[]} key={item.stripe_id} value={item.stripe_id} />
+                                                <input type={'hidden'} name={'Quantity[]'} value={item.quantity} />
+                                            )
+                                        })} */}
+                                        <input type={'hidden'}  name={'Price[]'} key={'price_1MjtdeGFNcYX1JBmGG0DZNYC'} value={'price_1MjtdeGFNcYX1JBmGG0DZNYC'} />
+                                        <input type={'hidden'}  name={'Quantity[]'} value={2} />
+                                        <input type={'hidden'}  name={'Price[]'} key={'price_1Mk8dbGFNcYX1JBmfVmE3etI'} value={'price_1Mk8dbGFNcYX1JBmfVmE3etI'} />
+                                        <input type={'hidden'}  name={'Quantity[]'} value={1} />
                                         <button>Checkout</button>
                                     </form>
                                 </div>
