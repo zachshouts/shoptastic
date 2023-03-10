@@ -69,9 +69,9 @@ const HomePage = ({ user }) => {
           <Col className="col-lg-4 col-md-5" key={product.title}>
             <Card className="product-card align-items-flex-end">
               <Card.Body>
-                <Card.title className="producttitle">
+                <Card.Title className="producttitle">
                   {product.title}
-                </Card.title>
+                </Card.Title>
                 <img src={product.image} className="product-image" />
                 <Card.Text className="product-price">{product.price}</Card.Text>
               </Card.Body>
