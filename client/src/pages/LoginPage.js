@@ -25,6 +25,7 @@ const LoginPage = (props) => {
 
     if( result && !result.err && result.data && result.data.token ){
       setLoginResult("success")
+      props.setUser(result.data.user);
       cookie.set("auth-token", result.data.token, { expires: 3 })
     } else {
       setLoginResult("fail")

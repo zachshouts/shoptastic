@@ -37,13 +37,13 @@ function App() {
   return (
     <BrowserRouter>
       <Wrapper>
-        <Header user={user} cartItems={cartItems} />
+        <Header user={user} setUser={setUser} cartItems={cartItems} />
         <div className="pt-3 px-4">
           <Routes>
             <Route path="/" element={<HomePage user={user} />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage setUser={setUser} />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
-            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/signup" element={<SignupPage setUser={setUser} />} />
           </Routes>
         </div>
         <Footer />

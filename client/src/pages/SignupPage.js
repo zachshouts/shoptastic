@@ -32,6 +32,7 @@ const SignupPage = (props) => {
     } else {
       const result = await query.json()
       setSignupResult("success")
+      props.setUser(result);
     }
   }
 

@@ -77,9 +77,9 @@ const HomePage = ({ user }) => {
               onClick={handleItemLoad}
             >
               <Card.Body>
-                <Card.title className="producttitle">
+                <Card.Title className="producttitle">
                   {product.title}
-                </Card.title>
+                </Card.Title>
                 <img src={product.image} className="product-image" />
                 <Card.Text className="product-price">{product.price}</Card.Text>
               </Card.Body>
