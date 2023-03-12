@@ -1,3 +1,9 @@
 
 /* === typography ====== */ 
+h3 {
+  color:black
+}
 
+.carousel-control-prev-icon, .carousel-control-next {
+background-color:black
+}

@@ -4,19 +4,19 @@ const productSchema = new Schema({
   _id: {
     type: Schema.Types.ObjectId,
     required: true,
-    uniquie: true
+    uniquie: true,
   },
-	title: {
-		type: String,
-    required: true
-	},
+  title: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   images: [{ type: String }],
   stock: {
@@ -25,9 +25,9 @@ const productSchema = new Schema({
   stripe_id: {
     type: String,
     required: true,
-    unique: true
-  }
+    unique: true,
+  },
 });
 
-const Product = model('Product', productSchema);
+const Product = model("Product", productSchema);
 module.exports = Product;
