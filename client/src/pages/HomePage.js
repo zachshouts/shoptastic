@@ -14,10 +14,12 @@ const HomePage = ({ user, setCartItems }) => {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [productsShowing, setProductsShowing] = useState(false);
 
-  const fetchProducts = async (e) => {
-    const productsResponse = await fetch(`/api/category/${e.target.key}`);
+  const fetchProducts = async (id) => {
+    // console.log(id);
+    const productsResponse = await fetch(`/api/category/${id}`);
     const products = await productsResponse.json();
-    setSelectedProducts(products);
+    // console.log(products.products);
+    setSelectedProducts(products.products);
   };
 
   const handleItemLoad = (e) => {
@@ -40,7 +42,7 @@ const HomePage = ({ user, setCartItems }) => {
       const category = await categoryResponse.json();
 
       category.map((category) => {
-        productArr = [...productArr, ...category.products];
+        return productArr = [...productArr, ...category.products];
       });
       console.log(category);
 
@@ -70,7 +72,7 @@ const HomePage = ({ user, setCartItems }) => {
             >
               {categories.map((category) => (
                 <Carousel.Item
-                  onClick={fetchProducts}
+                  onClick={() => fetchProducts(category._id)}
                   key={category._id}
                   className="category-item"
                 >
@@ -105,10 +107,10 @@ const HomePage = ({ user, setCartItems }) => {
                   <Card.Title className="producttitle">
                     {product.title}
                   </Card.Title>
-                  <img
+                  {/* <img
                     src={`/img/products/${product.name}.png`}
                     className="product-image"
-                  />
+                  /> */}
                   <Card.Text className="product-price">
                     {product.price}
                   </Card.Text>
