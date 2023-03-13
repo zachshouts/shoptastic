@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import cookie from 'js-cookie';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { GiMagnifyingGlass } from 'react-icons/gi';
@@ -6,12 +7,21 @@ import { RxAvatar } from 'react-icons/rx';
 
 const Header = ({ user, setUser, cartItems }) => {
 
+    const [cartQuantity, setCartQuantity] = useState(0);
+
+    console.log(user)
 
     const logout = () => {
         cookie.remove('auth-token');
         setUser(null);
         window.location.reload();
     }
+
+    useEffect(() => {
+        cartItems.map((item) => {
+            setCartQuantity(cartQuantity + parseInt(item.quantity))
+            })
+        }, [cartItems])
 
     return (
         <header>
@@ -63,6 +73,7 @@ const Header = ({ user, setUser, cartItems }) => {
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
+                            
                                 <a
                                     className="nav-link dropdown-toggle"
                                     href='#'
@@ -70,12 +81,13 @@ const Header = ({ user, setUser, cartItems }) => {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 > 
+                               
                                 <div className="cart" >
-                                    <span className="count">{cartItems.length}</span>
+                                    <span className="count">{cartQuantity}</span>
                                     <AiOutlineShoppingCart size={24} className='shopping-cart'/>
                                 </div>
                                 </a>
-                                <div className='dropdown-menu cart-menu'>
+                                <div className='dropdown-menu drop-menu-start cart-menu' style={{left: "auto", right:0, width: "300px"}}>
                                         <ul>
                                         {cartItems.length === 0 ? (<p>Your cart is empty</p>) : 
                                             ( cartItems.map((item) => {
@@ -83,6 +95,7 @@ const Header = ({ user, setUser, cartItems }) => {
                                                     <li key={item.stripe_id}>
                                                         <p>{item.title}</p>
                                                         <p>${item.price}</p>
+                                                        <p>Quantity:{item.quantity}</p>
                                                     </li>
                                                     )
                                                 }))
@@ -101,6 +114,7 @@ const Header = ({ user, setUser, cartItems }) => {
                                         <button>Checkout</button>
                                     </form>
                                 </div>
+                           
                             </li>
                         </ul>
                     </div>

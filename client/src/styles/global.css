@@ -19,10 +19,19 @@ h3 {
   margin: 0 auto;
 }
 
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
   color:black;
 
+}
+
+.btn-primary {
+  background-color:black;
+  width: 25%
 }
 
 
@@ -94,4 +103,9 @@ a {
 
 .home {
   margin: 0 auto;
+}
+
+.single-product-details {
+  color:white;
+  padding-left: 6%
 }
