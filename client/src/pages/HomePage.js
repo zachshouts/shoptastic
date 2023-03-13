@@ -42,7 +42,7 @@ const HomePage = ({ user, setCartItems }) => {
       const category = await categoryResponse.json();
 
       category.map((category) => {
-        return productArr = [...productArr, ...category.products];
+        return (productArr = [...productArr, ...category.products]);
       });
       console.log(category);
 
@@ -97,12 +97,19 @@ const HomePage = ({ user, setCartItems }) => {
           {/* { productsShowing === true && (  */}
 
           {selectedProducts.map((product) => (
-            <Col className="col-lg-4 col-md-5" key={product._id}>
+            <Col
+              className="col-lg-4 col-md-5 mx-4 text-center"
+              key={product._id}
+            >
               <Card
-                className="product-card align-items-flex-end"
-                onClick={handleItemLoad}
+                className="product-card"
                 key={product._id}
+                style={{ Height: "250px" }}
               >
+                <img
+                  src={`/img/${product.images}`}
+                  style={{ height: "100x" }}
+                />
                 <Card.Body>
                   <Card.Title className="producttitle">
                     {product.title}
@@ -114,10 +121,10 @@ const HomePage = ({ user, setCartItems }) => {
                   <Card.Text className="product-price">
                     {product.price}
                   </Card.Text>
-                  <Card.Text>
-                    <a href={`/product?product_id=${product._id}`}>View More</a>
-                  </Card.Text>
                 </Card.Body>
+                <Card.Text>
+                  <a href={`/product?product_id=${product._id}`}>View More</a>
+                </Card.Text>
               </Card>
             </Col>
           ))}
